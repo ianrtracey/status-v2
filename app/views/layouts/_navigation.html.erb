@@ -1,4 +1,7 @@
 <ul style="display:inline;">
 	<li>Mentions</li>
-	<li>Logout</li>
+	<lI><%= current_user.team.name %></lI>
+	<lI><%= current_user.team.description %></lI>
+	<lI><%= current_user.team.users.size %> Members</lI>
+	<lI><%= current_user.email %></lI>
 </ul>

@@ -5,5 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 	has_many :posts
 	belongs_to :team
-
+ 
+  	def add_creator_to_team(user_id, team)
+		@user = User.find(user_id)
+		
+	end
 end
