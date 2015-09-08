@@ -1,0 +1,10 @@
+<h1>New Post</h1>
+
+<%= nested_form_for @post do |f| %>
+  <%= f.fields_for :items do |item_form| %>
+    <%= item_form.text_field :content %>
+    <%= item_form.text_field :category %>
+    <%= item_form.link_to_remove "Remove" %>
+  <% end %>
+  <p><%= f.link_to_add "Add", :items %></p>
+<% end %>
