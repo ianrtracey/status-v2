@@ -1,0 +1,18 @@
+<h1><%= @user.name %></h1>
+<p><%= "#{@user.posts.count} Posts" %></p>
+<p><%= "Last Status Update at: #{@user.posts.last.updated_at.strftime("%A %m/%d/%Y")}" %></p>
+
+<h2>Latest Status</h2>
+<%= @user.posts.last.updated_at.strftime("%A %d/%m/%Y") %>
+<ul>
+<% @user.posts.last.items.each do |item| %>
+	<li><%= "#{item.content} | #{item.category}" %></li>
+<% end %>
+</ul>
+
+<h3>Statuses</h3>
+<ul>
+	<% @user.posts.each do |post| %>
+	  <li><%= link_to(post.created_at.strftime("%A %d/%m/%Y"), post_path) %></li>
+	<% end %>
+</ul>

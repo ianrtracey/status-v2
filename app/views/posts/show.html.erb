@@ -1,0 +1,7 @@
+<h1><%= "Status #{@post.created_at.strftime("%A %d/%m/%Y")}" %></h1>
+
+<ul>
+	<% @post.items.sort_by { |item| item.category}.each do |item| %>
+	<li><%= "#{item.content} | #{item.category}" %></li>
+	<% end %>
+</ul>

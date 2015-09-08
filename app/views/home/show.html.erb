@@ -3,3 +3,16 @@ hi!
 <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
 <% end %>
 
+<h2>Team Statuses</h2>
+	<ul style="list-style:none">
+		<li><%= link_to current_user.name, user_path(current_user.id) %></li>
+		<li><%= current_user.username %></li>
+	<ul>
+	<%= current_user.posts.count %>
+	<strong>Status at <%= current_user.posts.last.updated_at.strftime("%A%m/%d/%Y") %></strong>
+			<% current_user.posts.each do |post| %>
+				<li><%= "#{post.items[0].content} | #{post.items[0].category}" %> </li>
+			<% end %>
+		<ul>
+
+	</ul>
